@@ -1,0 +1,54 @@
+{
+  "name": "react-stickyfill",
+  "version": "0.0.1",
+  "description": "React wrapper for Stickyfill library",
+  "main": "Stickyfill.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seleckis/react-stickyfill.git"
+  },
+  "keywords": [
+    "react",
+    "position",
+    "sticky",
+    "stickyfill",
+    "component",
+    "wrapper"
+  ],
+  "author": "Nikita Seleckis <nikita@seleckis.lv> (http://seleckis.lv/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seleckis/react-stickyfill/issues"
+  },
+  "homepage": "https://github.com/seleckis/react-stickyfill#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "eslint": "^3.2.2",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-react": "^6.0.0",
+    "postcss-loader": "^0.9.1",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "Stickyfill": "git+https://github.com/wilddeer/stickyfill.git",
+    "babel-polyfill": "^6.9.1",
+    "babel-runtime": "^6.11.6",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  }
+}

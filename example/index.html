@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react-stickyfill</title>
+	<style>
+		body{
+			margin: 0;
+			text-align: center;
+			font-family: helvetica, arial, sans-serif;
+			color: #fff;
+		}
+		.cf:before,
+		.cf:after {
+		    content: " ";
+		    display: table;
+		}
+		.cf:after {
+			clear: both;
+		}
+		h2{
+			text-transform: uppercase;
+			font-size: 50px;
+			letter-spacing: 3px;
+			font-weight: bold;
+		}
+		.section{
+			height: 100vh;
+		}
+		.before, .after{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.before{
+			background-color: #BB3101;
+		}
+		.parent{
+			background-color: #383C44;
+		}
+		.parent2{
+			background-color: #242930;
+		}
+		.after {
+			background-color: #007DEA;
+		}
+		.child,
+		.child2, .child2-active{
+			/* minimal requirements start */
+			position: static;
+			top: 50px;
+			/* minimal requirements end */
+			margin: 50px;
+			padding: 30px;
+			border-radius: 10px;
+			font-size: 25px;
+			background-color: #EA7C00;
+		}
+		.child, .child2-active{
+			position: sticky;
+			background-color: #2BBA00;
+		}
+		.note{
+			font-size: 20px;
+			line-height: 1.5;
+			text-transform: none;
+			font-weight: 100;
+		}
+		.media{
+			font-family: monospace;
+			display: block;
+			background-color: #1B9A00;
+			padding: 10px 5px;
+			margin: 10px 0;
+			font-size: 16px;
+		}
+		.child2 .media{
+			background-color: #CA5C00;
+		}
+	</style>
+</head>
+<body>
+	<div id="app"></div>
+	<script src="./build/index.js"></script>
+</body>
+</html>
