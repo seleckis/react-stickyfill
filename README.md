@@ -1,5 +1,5 @@
 # react-stickyfill
-React wrapper for Stickyfill library
+React wrapper for [Stickyfill](https://github.com/wilddeer/stickyfill) library
 
 ## Installation
 
