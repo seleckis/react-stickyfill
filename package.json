@@ -1,6 +1,6 @@
 {
   "name": "react-stickyfill",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "React wrapper for Stickyfill library",
   "main": "lib/index.js",
   "scripts": {
