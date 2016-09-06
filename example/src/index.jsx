@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Sticker from '../../Stickyfill';
+import Sticker from '../../';
 
 
 const App = React.createClass({
