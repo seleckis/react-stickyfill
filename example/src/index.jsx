@@ -6,7 +6,7 @@ import Sticker from '../../lib/';
 const App = React.createClass({
 	getDefaultProps(){
 		return {
-			media: "(max-width: 767px) and (orientation: portrait), (max-width: 1019px) and (orientation: landscape)"
+			media: "(max-width: 767px) and (orientation: portrait), (max-width: 1023px) and (orientation: landscape)"
 		}
 	},
 	mediaMatch(media){

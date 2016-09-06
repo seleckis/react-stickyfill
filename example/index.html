@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>react-stickyfill</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 		body{
 			margin: 0;
@@ -37,19 +38,19 @@
 		}
 		.parent{
 			background-color: #383C44;
+			height: 200vh;
 		}
 		.parent2{
 			background-color: #242930;
+			height: 200vh;
 		}
 		.after {
 			background-color: #007DEA;
 		}
 		.child,
 		.child2, .child2-active{
-			/* minimal requirements start */
 			position: static;
 			top: 50px;
-			/* minimal requirements end */
 			margin: 50px;
 			padding: 30px;
 			border-radius: 10px;
@@ -77,6 +78,28 @@
 		}
 		.child2 .media{
 			background-color: #CA5C00;
+		}
+		@media screen and (max-width: 767px) and (orientation: portrait), screen and (max-width: 1023px) and (orientation: landscape) {
+			h2{
+				font-size: 30px;
+				margin: .5em 0;
+			}
+			.child,
+			.child2, .child2-active{
+				position: static;
+				top: 30px;
+				margin: 30px;
+				padding: 20px;
+				border-radius: 5px;
+				font-size: 18px;
+			}
+			.note{
+				font-size: 16px;
+				line-height: 1.2;
+			}
+			.media {
+				font-size: 14px;
+			}
 		}
 	</style>
 </head>
