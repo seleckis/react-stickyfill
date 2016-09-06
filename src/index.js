@@ -27,9 +27,9 @@ const Sticker = React.createClass({
 			isSticky: false
 		});
 	},
-	update(){{
+	update(){
 		Stickyfill.rebuild();
-	}},
+	},
 	handleResize() {
 		if(this.mediaMatch(this.props.media)){
 			if(!this.state.isSticky){
