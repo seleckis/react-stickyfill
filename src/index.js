@@ -59,6 +59,9 @@ const Sticker = React.createClass({
 			this.update();
 		}
 	},
+	componentDidUpdate(){
+		this.update();
+	},
 	render(){
 		return this.props.children;
 	}
