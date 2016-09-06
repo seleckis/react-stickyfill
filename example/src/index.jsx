@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Sticker from '../../';
+import Sticker from '../../lib/';
 
 
 const App = React.createClass({
@@ -14,13 +14,15 @@ const App = React.createClass({
 	},
 	getInitialState(){
 		return {
-			stickerActive: false
+			stickerActive: false,
+			height: false
 		}
 	},
 	changeState(){
 		this.setState({
-			stickerActive: this.mediaMatch(this.props.media)
-		})
+			stickerActive: this.mediaMatch(this.props.media),
+			height: this.child2.offsetHeight
+		});
 	},
 	componentDidMount(){
 		window.addEventListener('resize', this.changeState);
@@ -43,8 +45,8 @@ const App = React.createClass({
 					</Sticker>
 				</div>
 				<div className="section parent2 cf">
-					<Sticker media={this.props.media}>
-						<div className={ !this.state.stickerActive ? "child2" : "child2-active" }>
+					<Sticker media={this.props.media} forceUpdate={this.state.height}>
+						<div className={ !this.state.stickerActive ? "child2" : "child2-active" } ref={(r) => this.child2 = r}>
 							<h2>Sticky box with media</h2>
 							<p className="note">
 								works only on <span className="media">{this.props.media}</span>

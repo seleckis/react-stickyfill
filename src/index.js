@@ -27,6 +27,9 @@ const Sticker = React.createClass({
 			isSticky: false
 		});
 	},
+	update(){{
+		Stickyfill.rebuild();
+	}},
 	handleResize() {
 		if(this.mediaMatch(this.props.media)){
 			if(!this.state.isSticky){
@@ -50,6 +53,11 @@ const Sticker = React.createClass({
 			window.removeEventListener('resize', this.handleResize);
 		}
 		this.unsticky(this.stick);
+	},
+	componentWillReceiveProps(nextProps){
+		if(nextProps.forceUpdate !== this.props.forceUpdate){
+			this.update();
+		}
 	},
 	render(){
 		return this.props.children;
