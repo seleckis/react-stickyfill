@@ -15,6 +15,10 @@ module.exports = {
 			}
 		]
 	},
+	externals: [
+		"react": "React",
+        "react-dom": "ReactDOM"
+	],
 	resolve: {
 		extensions: ['', '.js', '.jsx'],
 		modulesDirectories: ['node_modules']
