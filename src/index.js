@@ -5,7 +5,11 @@ import 'Stickyfill';
 
 const Sticker = React.createClass({
 	propTypes: {
-	    media: React.PropTypes.string
+	    media: React.PropTypes.string,
+		children: React.PropTypes.oneOfType([
+			React.PropTypes.element,
+			React.PropTypes.func
+		])
 	},
 	mediaMatch(media){
 		return window.matchMedia(media).matches;
@@ -63,7 +67,7 @@ const Sticker = React.createClass({
 		this.update();
 	},
 	render(){
-		return React.cloneElement(this.props.children, ...this.props);
+		return typeof this.props.children.type === "function" ? React.cloneElement(this.props.children, { ...this.props }) : this.props.children;
 	}
 });
 
