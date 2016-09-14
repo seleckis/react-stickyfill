@@ -63,13 +63,7 @@ const Sticker = React.createClass({
 		this.update();
 	},
 	render(){
-		return (
-			<div>
-				{React.Children.map(this.props.children, (child) =>
-					React.cloneElement(child, this.props)
-				)}
-			</div>
-		);
+		return React.cloneElement(this.props.children, ...this.props);
 	}
 });
 
