@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Sticker from '../../lib/';
 
+const Comp = React.createClass({
+	render(){
+		return (<div className={this.props.className}>Sticky Component </div>)
+	}
+});
 
 const App = React.createClass({
 	getDefaultProps(){
@@ -53,6 +58,11 @@ const App = React.createClass({
 								because of media prop passed to Sticker component
 							</p>
 						</div>
+					</Sticker>
+				</div>
+				<div className="section parent3 cf">
+					<Sticker className="child3">
+						<Comp />
 					</Sticker>
 				</div>
 				<div className="section after">
