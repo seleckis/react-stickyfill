@@ -67,7 +67,8 @@ const Sticker = React.createClass({
 		this.update();
 	},
 	render(){
-		return typeof this.props.children.type === "function" ? React.cloneElement(this.props.children, { ...this.props }) : this.props.children;
+		let { children, ...otherProps } = this.props;
+		return typeof children.type === "function" ? React.cloneElement(this.props.children, { ...otherProps }) : children;
 	}
 });
 
