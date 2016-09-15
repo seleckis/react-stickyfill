@@ -13,7 +13,6 @@ Simple usage:
 
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Sticker from 'Stickyfill';
 
 const SomeComponent = React.createClass({
@@ -29,4 +28,4 @@ const SomeComponent = React.createClass({
 });
 ```
 
-Parent Element should have height greater than Sticky Element. Sticky Element should have style `position: sticky` and `top: {some value}`.
+*Parent Element* should have height greater than *Sticky Element*. *Sticky Element* should have style `position: sticky` and `top: {some value}`.
