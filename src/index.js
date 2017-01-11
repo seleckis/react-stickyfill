@@ -12,7 +12,7 @@ const Sticker = React.createClass({
 		])
 	},
 	mediaMatch(media){
-		return window.matchMedia(media).matches;
+		return window && window.matchMedia(media).matches;
 	},
 	getInitialState(){
 		return {
@@ -46,7 +46,7 @@ const Sticker = React.createClass({
 	componentDidMount(){
 		this.stick = ReactDOM.findDOMNode(this);
 		if(this.props.media){
-			window.addEventListener('resize', this.handleResize);
+			window && window.addEventListener('resize', this.handleResize);
 			this.handleResize();
 		} else {
 			this.sticky(this.stick);
@@ -54,7 +54,7 @@ const Sticker = React.createClass({
 	},
 	componentWillUnmount() {
 		if(this.props.media){
-			window.removeEventListener('resize', this.handleResize);
+			window && window.removeEventListener('resize', this.handleResize);
 		}
 		this.unsticky(this.stick);
 	},

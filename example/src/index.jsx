@@ -73,10 +73,11 @@ const App = React.createClass({
 	}
 });
 
-
-ReactDOM.render(
-	(
-		<App />
-	),
-	document.getElementById('app')
-);
+if(typeof document !== 'undefined') {
+	ReactDOM.render(
+		(
+			<App />
+		),
+		document.getElementById('app')
+	);
+}
