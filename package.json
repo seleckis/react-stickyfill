@@ -53,7 +53,7 @@
     "react-dom": "^15.2.1"
   },
   "dependencies": {
-    "Stickyfill": "git+https://github.com/wilddeer/stickyfill.git"
+    "Stickyfill": "git+https://github.com/seleckis/stickyfill.git"
   },
   "peerDependencies": {
     "react": "^15.2.1"
