@@ -12,11 +12,11 @@ npm install react-stickyfill --save
 Simple usage:
 
 ```js
-import React from 'react';
+import React, {Component} from 'react';
 import Sticker from 'Stickyfill';
 
-const SomeComponent = React.createClass({
-	render(){
+class SomeComponent extend Component{
+	render() {
 		return (
 			<div>{/* Parent Element. */}
 				<Sticker>
@@ -25,7 +25,7 @@ const SomeComponent = React.createClass({
 			</div>
 		);
 	}
-});
+}
 ```
 
 *Parent Element* should have height greater than *Sticky Element*. *Sticky Element* should have style `position: sticky` and `top: {some value}`.
