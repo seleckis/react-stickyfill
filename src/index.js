@@ -1,40 +1,42 @@
 /*global Stickyfill */
-import React from "react";
+import React, {Component} from "react";
+import PropTypes from 'prop-types';
 import ReactDOM from "react-dom";
 import 'Stickyfill';
 
-const Sticker = React.createClass({
-	propTypes: {
-	    media: React.PropTypes.string,
-		children: React.PropTypes.oneOfType([
-			React.PropTypes.element,
-			React.PropTypes.func
+export default class Sticker extends Component {
+	static propTypes = {
+	    media: PropTypes.string,
+		children: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.func
 		])
-	},
-	mediaMatch(media){
-		return window && window.matchMedia(media).matches;
-	},
-	getInitialState(){
-		return {
+	};
+	constructor(props) {
+		super(props);
+		this.state = {
 			isSticky: false
-		}
-	},
-	sticky(stick){
+		};
+	}
+	mediaMatch = (media) => {
+		return window && window.matchMedia(media).matches;
+	}
+	sticky = (stick) => {
 		Stickyfill.add(stick);
 		this.setState({
 			isSticky: true
 		});
-	},
-	unsticky(stick){
+	}
+	unsticky = (stick) => {
 		Stickyfill.remove(stick);
 		this.setState({
 			isSticky: false
 		});
-	},
-	update(){
+	}
+	update = () => {
 		Stickyfill.rebuild();
-	},
-	handleResize() {
+	}
+	handleResize = () => {
 		if(this.mediaMatch(this.props.media)){
 			if(!this.state.isSticky){
 				this.sticky(this.stick);
@@ -42,7 +44,7 @@ const Sticker = React.createClass({
 		} else if(this.state.isSticky){
 			this.unsticky(this.stick);
 		}
-	},
+	}
 	componentDidMount(){
 		this.stick = ReactDOM.findDOMNode(this);
 		if(this.props.media){
@@ -51,27 +53,23 @@ const Sticker = React.createClass({
 		} else {
 			this.sticky(this.stick);
 		}
-	},
+	}
 	componentWillUnmount() {
 		if(this.props.media){
 			window && window.removeEventListener('resize', this.handleResize);
 		}
 		this.unsticky(this.stick);
-	},
+	}
 	componentWillReceiveProps(nextProps){
 		if(nextProps.forceUpdate !== this.props.forceUpdate){
 			this.update();
 		}
-	},
+	}
 	componentDidUpdate(){
 		this.update();
-	},
-	render(){
+	}
+	render() {
 		let { children, ...otherProps } = this.props;
 		return typeof children.type === "function" ? React.cloneElement(this.props.children, { ...otherProps }) : children;
 	}
-});
-
-
-
-export default Sticker;
+}

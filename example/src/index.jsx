@@ -1,42 +1,43 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Sticker from '../../lib/';
 
-const Comp = React.createClass({
-	render(){
-		return (<div className={this.props.className}>Sticky Component </div>)
+class Comp extends Component {
+	render() {
+		return (
+			<div className={this.props.className}>Sticky Component </div>
+		)
 	}
-});
+}
 
-const App = React.createClass({
-	getDefaultProps(){
-		return {
-			media: "(max-width: 767px) and (orientation: portrait), (max-width: 1023px) and (orientation: landscape)"
-		}
-	},
-	mediaMatch(media){
-		return window.matchMedia(media).matches;
-	},
-	getInitialState(){
-		return {
+class App extends Component {
+	static defaultProps = {
+		media: "(max-width: 767px) and (orientation: portrait), (max-width: 1023px) and (orientation: landscape)"
+	};
+	constructor(props) {
+		super(props);
+		this.state = {
 			stickerActive: false,
 			height: false
-		}
-	},
-	changeState(){
+		};
+	}
+	componentDidMount() {
+		window.addEventListener('resize', this.changeState);
+		this.changeState();
+	}
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.changeState);
+	}
+	mediaMatch = (media) => {
+		return window.matchMedia(media).matches;
+	}
+	changeState = () => {
 		this.setState({
 			stickerActive: this.mediaMatch(this.props.media),
 			height: this.child2.offsetHeight
 		});
-	},
-	componentDidMount(){
-		window.addEventListener('resize', this.changeState);
-		this.changeState();
-	},
-	componentWillUnmount() {
-		window.removeEventListener('resize', this.changeState);
-	},
-	render(){
+	}
+	render() {
 		return (
 			<div className="root">
 				<div className="section before">
@@ -71,7 +72,7 @@ const App = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
 if(typeof document !== 'undefined') {
 	ReactDOM.render(
