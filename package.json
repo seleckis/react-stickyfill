@@ -43,7 +43,7 @@
     "webpack": "^2.6.0"
   },
   "dependencies": {
-    "Stickyfill": "https://github.com/sagansystems/stickyfill#update-stickyfill-from-upstream",
+    "Stickyfill": "https://github.com/sagansystems/stickyfill",
     "prop-types": "^15.5.10"
   }
 }
