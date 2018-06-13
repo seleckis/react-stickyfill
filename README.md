@@ -13,7 +13,7 @@ Simple usage:
 
 ```js
 import React, {Component} from 'react';
-import Sticker from 'Stickyfill';
+import Sticker from 'react-stickyfill';
 
 class SomeComponent extend Component{
 	render() {
