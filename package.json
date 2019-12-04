@@ -43,7 +43,7 @@
     "webpack": "^4.38.0"
   },
   "dependencies": {
-    "Stickyfill": "git+https://github.com/seleckis/stickyfill.git",
+    "stickyfill": "git+https://github.com/infogram/stickyfill.git#90526ae",
     "prop-types": "^15.5.10"
   }
 }
