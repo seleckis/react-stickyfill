@@ -1,3 +1,6 @@
+⚠ Unmaintained!
+react-stickyfill did a good job while the browsers were implementing position: sticky support. You can now safely use stickies without a polyfill, all modern browsers support them natively.
+
 # react-stickyfill
 React wrapper for [Stickyfill](https://github.com/wilddeer/stickyfill) library
 
